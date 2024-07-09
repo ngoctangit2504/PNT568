@@ -30,7 +30,7 @@ const Welcome = () => {
   <div class="container py-4">
     <div class="p-5 mb-4 bg-body-tertiary rounded-3">
       <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold">Custom jumbotron</h1>
+        <h1 class="display-5 fw-bold">Giới thiệu</h1>
         <p class="col-md-8 fs-4">
         Trụ sở tại vị trí đắc địa ngay trung tâm thành phố, tòa nhà văn phòng 568 là một trong 
         những lựa chọn hàng đầu dành cho các doanh nghiệp lớn nhỏ. Được thiết kế theo phong 

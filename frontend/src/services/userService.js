@@ -8,6 +8,9 @@ const getUserContracts = (token) => {
   });
 };
 
+export const getUserCount = () => axios.get(`${API_URL}/user-count`);
+
+
 export default {
   getUserContracts,
 };

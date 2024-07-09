@@ -10,11 +10,11 @@ import AdminDashboard from "./components/AdminDashboard";
 import UserDashboard from "./components/UserDashboard";
 import Header from "./defaultLayout/Header";
 import Footer from "./defaultLayout/Footer";
-import customerRoutes from "./routes/customeRoutes";
-import CustomerList from "./components/CustomerList";
 
-import FloorPlanList from './feature/floorplan/FloorPlanList';
-import AddFloorPlanForm from './feature/floorplan/AddFloorPlan';
+
+import MatBangListPage from './feature/matbang/MatBangListPage';
+import AddMatBangPage from './feature/matbang/AddMatBangPage';
+
 
 
 const App = () => {
@@ -32,12 +32,8 @@ const App = () => {
                 <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/user" element={<UserDashboard />} />
 
-                <Route path="/customer-list" element={<CustomerList/>}></Route>
-
-
-                <Route path="/floor-plan" element={<FloorPlanList/>}></Route>
-                <Route path="/add-floor-plan" element={<AddFloorPlanForm/>} />
-
+                <Route path="/matbang" element={<MatBangListPage/>}></Route>
+                <Route path="/them-mat-bang" element={<AddMatBangPage/>}></Route>
               </Routes>
             </main>
             <Footer />
