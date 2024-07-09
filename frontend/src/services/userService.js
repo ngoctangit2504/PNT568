@@ -8,6 +8,9 @@ const getUserContracts = (token) => {
   });
 };
 
+export const getAllUser = () => axios.get(API_URL);
+export const deleteUser = (id) => axios.delete(`${API_URL}/${id}`);
+
 export const getUserCount = () => axios.get(`${API_URL}/user-count`);
 
 

@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 
 
 const Footer = () => {
+
+  const lienHeRef = useRef(null);
+
   return (
+    <div id="lienhe" ref={lienHeRef}>
+
     <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
       <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
         <div className='me-5 d-none d-lg-block'>
@@ -114,6 +119,8 @@ const Footer = () => {
         </a>
       </div>
     </MDBFooter>
+
+    </div>
   );
 };
 

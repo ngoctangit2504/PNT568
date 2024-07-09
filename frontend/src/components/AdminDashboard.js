@@ -77,7 +77,7 @@ const AdminDashboard = () => {
           </button>
           <ul class="dropdown-menu">
             <li>
-              <Link to="/customer-list">
+              <Link to="/user-list">
                 <button class="dropdown-item" type="button">
                   Người dùng
                 </button>

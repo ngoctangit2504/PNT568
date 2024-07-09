@@ -11,6 +11,8 @@ import UserDashboard from "./components/UserDashboard";
 import Header from "./defaultLayout/Header";
 import Footer from "./defaultLayout/Footer";
 
+import UserListPage from "./feature/user/UserListPage";
+
 
 import MatBangListPage from './feature/matbang/MatBangListPage';
 import AddMatBangPage from './feature/matbang/AddMatBangPage';
@@ -31,6 +33,8 @@ const App = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/user" element={<UserDashboard />} />
+
+                <Route path="/user-list" element={<UserListPage/>}></Route>
 
                 <Route path="/matbang" element={<MatBangListPage/>}></Route>
                 <Route path="/them-mat-bang" element={<AddMatBangPage/>}></Route>

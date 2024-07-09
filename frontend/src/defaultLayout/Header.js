@@ -21,6 +21,25 @@ const Header = () => {
     }
   };
 
+
+  const handleScrollToGioiThieu = (e) => {
+    e.preventDefault();
+    const section = document.getElementById('gioithieu');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleScrollToLienHe = (e) => {
+    e.preventDefault();
+    const section = document.getElementById('lienhe');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  
+
   return (
     <header>
       <div className="">
@@ -49,7 +68,7 @@ const Header = () => {
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">Giới thiệu</a>
+                <a className="nav-link" href="/#gioithieu" onClick={handleScrollToGioiThieu}>Giới thiệu</a>
               </li>
 
               <li class="nav-item">
@@ -57,7 +76,7 @@ const Header = () => {
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">Liên hệ</a>
+                <a className="nav-link" href="/#lienhe" onClick={handleScrollToLienHe}>Liên hệ</a>
               </li>
 
               <li class="nav-item dropdown">

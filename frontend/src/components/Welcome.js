@@ -1,6 +1,25 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import MatBangItem from "../feature/matbang/MatBangItemForm";
+import { getAllMatBang } from "../services/matBangService";
+
 
 const Welcome = () => {
+
+const gioiThieuRef = useRef(null);
+
+const [matBangs, setMatBangs] = useState([]);
+
+useEffect(() => {
+  fetchMatBangs();
+}, []);
+
+const fetchMatBangs = async () => {
+  const response = await getAllMatBang();
+  setMatBangs(response.data);
+};
+
+
   return <>
   <body> 
 
@@ -30,7 +49,7 @@ const Welcome = () => {
   <div class="container py-4">
     <div class="p-5 mb-4 bg-body-tertiary rounded-3">
       <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold">Giới thiệu</h1>
+        <h1 id="gioithieu" ref={gioiThieuRef} class="display-5 fw-bold">Giới thiệu</h1>
         <p class="col-md-8 fs-4">
         Trụ sở tại vị trí đắc địa ngay trung tâm thành phố, tòa nhà văn phòng 568 là một trong 
         những lựa chọn hàng đầu dành cho các doanh nghiệp lớn nhỏ. Được thiết kế theo phong 
@@ -64,7 +83,17 @@ const Welcome = () => {
         </div>
       </div>
 
+
     </div>
+    <br></br>
+
+
+    <div className="row">
+            {matBangs.slice(0, 6).map((matBang, index) => (
+              <MatBangItem key={matBang._id} matBang={matBang} stt={index + 1} />
+            ))}
+          </div>
+
   </div>
 </main>
 
