@@ -7,7 +7,6 @@ const path = require('path');
 
 
 const floorPlanRoutes = require('./routes/floorPlanRoutes');
-const customerRoutes = require('./routes/customerRoutes');
 const matBangRoutes = require('./routes/matBangRoutes');
 const userRouter = require('./routes/user');
 
@@ -33,8 +32,6 @@ app.use('/api/floor-plan', floorPlanRoutes);
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/admin', require('./routes/admin'));
 app.use('/api/user', require('./routes/user', userRouter));
-
-app.use('/api', customerRoutes);
 
 app.use('/api/matbang', matBangRoutes);
 

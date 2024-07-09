@@ -6,6 +6,10 @@ const userController = require('../controllers/userController');
 
 router.get('/user-count', userController.getUserCount);
 
+router.get('/', userController.getAllUser);
+router.delete('/:id', userController.deleteUser);
+
 router.use(auth);
+
 
 module.exports = router;
