@@ -1,3 +1,5 @@
+// floorPlan controller
+
 const FloorPlan = require('../models/FloorPlan');
 
 exports.getFloorPlans = async (req, res) => {

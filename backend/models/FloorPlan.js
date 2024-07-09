@@ -1,3 +1,5 @@
+// model floor plan
+
 const mongoose = require('mongoose');
 
 const floorPlanSchema = new mongoose.Schema({
