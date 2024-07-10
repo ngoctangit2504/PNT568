@@ -16,6 +16,7 @@ import UserListPage from "./feature/user/UserListPage";
 
 import MatBangListPage from './feature/matbang/MatBangListPage';
 import AddMatBangPage from './feature/matbang/AddMatBangPage';
+import UpdateMatBangPage from './feature/matbang/UpdateMatBangPage';
 
 
 
@@ -38,6 +39,7 @@ const App = () => {
 
                 <Route path="/matbang" element={<MatBangListPage/>}></Route>
                 <Route path="/them-mat-bang" element={<AddMatBangPage/>}></Route>
+                <Route path="/update-mat-bang/:matBangId" element={<UpdateMatBangPage/>}></Route>
               </Routes>
             </main>
             <Footer />

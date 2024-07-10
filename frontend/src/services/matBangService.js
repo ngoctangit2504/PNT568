@@ -8,3 +8,6 @@ export const updateMatBang = (id, matBang) => axios.put(`${API_URL}/${id}`, matB
 export const deleteMatBang = (id) => axios.delete(`${API_URL}/${id}`);
 
 export const getMatBangCount = () => axios.get(`${API_URL}/matbang-count`);
+
+export const getMatBangById = (id) => axios.get(`${API_URL}/${id}`);
+

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MatBangItem = ({ matBang, onDelete, stt }) => {
   const handleDelete = () => {
@@ -18,6 +19,7 @@ const MatBangItem = ({ matBang, onDelete, stt }) => {
       <td>{matBang.congTyThue || 'chưa có'}</td>
       <td>{matBang.nhanVienQuanLy}</td>
       <td>
+        <Link to={`/update-mat-bang/${matBang._id}`}><button type="button" className="btn btn-warning">Cập nhật</button></Link>
         <button className="btn btn-danger" onClick={handleDelete}>Xóa</button>
       </td>
     </tr>

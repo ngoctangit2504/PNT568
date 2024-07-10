@@ -94,7 +94,7 @@ const AddMatBangPage = () => {
               <table>
                 <tr>
                   <td><button type="submit" class="btn btn-primary">Thêm mới</button></td>
-                  <td><Link to="/matbang"><button type='button'>Hủy</button></Link></td>
+                  <td><Link to="/matbang"><button type='button' class="btn btn-secondary">Hủy</button></Link></td>
                 </tr>
               </table>
             </td>
