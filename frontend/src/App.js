@@ -19,8 +19,13 @@ import AddMatBangPage from './feature/matbang/AddMatBangPage';
 import UpdateMatBangPage from './feature/matbang/UpdateMatBangPage';
 
 
+import PDFManager from './feature/pdf/PDFManager';
+import PDFUpload from './feature/pdf/PDFUpload';
+
+
 
 const App = () => {
+
   return (
     <>
       <AuthProvider>
@@ -40,6 +45,10 @@ const App = () => {
                 <Route path="/matbang" element={<MatBangListPage/>}></Route>
                 <Route path="/them-mat-bang" element={<AddMatBangPage/>}></Route>
                 <Route path="/update-mat-bang/:matBangId" element={<UpdateMatBangPage/>}></Route>
+
+                <Route path="/pdfs" element={<PDFManager />} />
+                <Route path="/upload" element={<PDFUpload />} />
+
               </Routes>
             </main>
             <Footer />

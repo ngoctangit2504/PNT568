@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
 
-  const { isLoggedIn, logout } = useContext(AuthContext);
+  const { isLoggedIn, user, logout } = useContext(AuthContext);
   
   const navigate = useNavigate();
 
@@ -98,6 +98,7 @@ const Header = () => {
               <table>
                 <tr>
                   <td>
+                    <p>Chào, {user && user.name}</p>
                     <button type="button" class="btn btn-secondary" onClick={handleLogout}>Đăng xuất</button>
                   </td>
                 </tr>

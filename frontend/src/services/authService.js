@@ -16,6 +16,24 @@ const AuthService = {
     });
   },
 
+  getCurrentUser: async () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      return null;
+    }
+    const response = await fetch("/api/user", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    if (response.ok) {
+      const user = await response.json();
+      return user;
+    } else {
+      return null;
+    }
+  },
+
   logout() {
     const user = JSON.parse(localStorage.getItem('user'));
     if (user && user.token) {
@@ -38,5 +56,7 @@ const AuthService = {
     }).then(response => response.data);
   }
 };
+
+
 
 export default AuthService;

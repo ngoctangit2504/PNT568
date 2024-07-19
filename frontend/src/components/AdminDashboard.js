@@ -4,6 +4,7 @@ import AuthService from "../services/authService";
 
 import { getMatBangCount } from "../services/matBangService";
 import { getUserCount } from "../services/userService";
+import { getPDFCount } from '../services/pdfService';
 
 
 const AdminDashboard = () => {
@@ -12,10 +13,13 @@ const AdminDashboard = () => {
 
   const [matBangCount, setMatBangCount] = useState(0);
   const [userCount, setUserCount] = useState(0);
+  const [pdfCount, setPDFCount] = useState(0);
+
 
   useEffect(() => {
     fetchMatBangCount();
     fetchUserCount();
+    fetchPDFCount();
   }, []);
 
   const fetchMatBangCount = async () => {
@@ -35,6 +39,16 @@ const AdminDashboard = () => {
       console.error('Error fetching user count:', error);
     }
   };
+
+  const fetchPDFCount = async () => {
+    try {
+      const response = await getPDFCount();
+      setPDFCount(response.data.count);
+    } catch (error) {
+      console.error('Error fetching hop dong count:', error);
+    }
+  };
+
 
 
   useEffect(() => {
@@ -92,9 +106,12 @@ const AdminDashboard = () => {
             </li>
 
             <li>
-              <button class="dropdown-item" type="button">
+            <Link to="/pdfs">
+            <button class="dropdown-item" type="button">
                 Hợp đồng
               </button>
+            </Link>
+              
             </li>
             <li>
               <button class="dropdown-item" type="button">
@@ -129,7 +146,7 @@ const AdminDashboard = () => {
       <th>Số lượng</th>
       <td>{userCount}</td>
       <td>{matBangCount}</td>
-      <td>...</td>
+      <td>{pdfCount}</td>
       <td>...</td>
     </tr>
   </tbody>
