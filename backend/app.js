@@ -9,6 +9,8 @@ const path = require('path');
 const floorPlanRoutes = require('./routes/floorPlanRoutes');
 const matBangRoutes = require('./routes/matBangRoutes');
 const userRouter = require('./routes/user');
+const pdfRoutes = require('./routes/pdfRoutes');
+
 
 const app = express();
 
@@ -34,6 +36,8 @@ app.use('/api/admin', require('./routes/admin'));
 app.use('/api/user', require('./routes/user', userRouter));
 
 app.use('/api/matbang', matBangRoutes);
+
+app.use('/pdfs', pdfRoutes);
 
 
 module.exports = app;
