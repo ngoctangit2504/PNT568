@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
+const notify = () => {
+      toast.success("Xóa mặt bằng thành công");
+};
 
 const MatBangItem = ({ matBang, onDelete, stt }) => {
   const handleDelete = () => {
     if (window.confirm(`Bạn có chắc chắn muốn xóa mặt bằng ${matBang.maMatBang} không?`)) {
       onDelete(matBang._id);
+      notify();
     }
   };
 
